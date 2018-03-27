@@ -60,6 +60,25 @@ const getMessageDate = (num) => {
   return `${target.getFullYear()}年${target.getMonth() + 1}月${target.getDate()}日`;
 };
 
+/**
+ * formatDate
+ * output: 1993.9.1
+ * @param timeNum
+ * @returns {string}
+ */
+const formatDate = (timeNum) => {
+  if (!timeNum) {
+    return '无';
+  }
+  let result = '无';
+  try {
+    result = new Date(timeNum).toLocaleDateString().replace(/\//g, '.');
+  } catch (err) {
+    return '无';
+  }
+  return result;
+};
+
 
 const time = {
   MINUTE,
@@ -67,7 +86,8 @@ const time = {
   DAY,
   WEEK,
   showBefore,
-  formatDateTime
+  formatDateTime,
+  formatDate,
 };
 
 export default time;
