@@ -7,12 +7,10 @@ const cleanParams = (data) => {
   if (!data) {
     return null;
   }
-  const newData = {...data};
-  Object.keys(newData).forEach((key) => {
-    if (newData[key] === '' || newData[key] === null || newData[key] === undefined) {
-      delete newData[key];
-    } else {
-      newData[key] = encodeURI(encodeURI(newData[key]));
+  const newData = {};
+  Object.keys(data).forEach((key) => {
+    if (newData[key] !== '' && newData[key] !== null && newData[key] !== undefined) {
+      newData[key] = encodeURI(encodeURI(data[key]));
     }
   });
   return newData;
