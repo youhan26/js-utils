@@ -1,0 +1,14 @@
+.*.swp
+._*
+.DS_Store
+.git
+.idea
+.hg
+.npmrc
+.lock-wscript
+.svn
+.wafpickle-*
+.idea/
+config.gypi
+CVS
+npm-debug.log
