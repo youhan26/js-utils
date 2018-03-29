@@ -9,6 +9,7 @@
 .svn
 .wafpickle-*
 .idea/
+src/
 config.gypi
 CVS
 npm-debug.log
