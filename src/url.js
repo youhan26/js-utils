@@ -16,6 +16,20 @@ const cleanParams = (data) => {
   return newData;
 };
 
+
+const combineParams = (params) => {
+  if(!params){
+    return '';
+  }
+  const temp = [];
+  Object.keys(params).forEach((key) => {
+    if (params[key] !== '' && params[key] !== null && params[key] !== undefined) {
+      temp.push(`${key}=${encodeURI(encodeURI(params[key]))}`)
+    }
+  });
+  return temp.join('&');
+};
+
 /**
  * getUrlParams
  * input: http:/fdsfsdf?a=1&b=2
@@ -48,6 +62,7 @@ const getUrlParams = (keys) => {
 const url = {
   getUrlParams,
   cleanParams,
+  combineParams,
 };
 
 export default url;

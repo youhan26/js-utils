@@ -21,6 +21,19 @@ var cleanParams = function cleanParams(data) {
   return newData;
 };
 
+var combineParams = function combineParams(params) {
+  if (!params) {
+    return '';
+  }
+  var temp = [];
+  Object.keys(params).forEach(function (key) {
+    if (params[key] !== '' && params[key] !== null && params[key] !== undefined) {
+      temp.push(key + '=' + encodeURI(encodeURI(params[key])));
+    }
+  });
+  return temp.join('&');
+};
+
 /**
  * getUrlParams
  * input: http:/fdsfsdf?a=1&b=2
@@ -52,7 +65,8 @@ var getUrlParams = function getUrlParams(keys) {
 
 var url = {
   getUrlParams: getUrlParams,
-  cleanParams: cleanParams
+  cleanParams: cleanParams,
+  combineParams: combineParams
 };
 
 exports.default = url;
