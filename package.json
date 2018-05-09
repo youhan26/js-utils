@@ -1,6 +1,6 @@
 {
   "name": "mi-js-utils",
-  "version": "1.12.0",
+  "version": "0.13.0",
   "main": "./distribution/index.js",
   "repository": "https://github.com/YouHan26/js-utils.git",
   "author": "Han You <youhan26@gmail.com>",
