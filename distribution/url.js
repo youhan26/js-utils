@@ -5,8 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 /**
  * cleanParams
- * @param data
- * @returns {*}
  */
 var cleanParams = function cleanParams(data) {
   if (!data) {
@@ -15,7 +13,7 @@ var cleanParams = function cleanParams(data) {
   var newData = {};
   Object.keys(data).forEach(function (key) {
     if (newData[key] !== '' && newData[key] !== null && newData[key] !== undefined) {
-      newData[key] = encodeURI(encodeURI(data[key]));
+      newData[key] = encodeURIComponent(encodeURIComponent(data[key]));
     }
   });
   return newData;
