@@ -8,9 +8,12 @@ Object.defineProperty(exports, "__esModule", {
  */
 var formatMoney = function formatMoney(money) {
   if (!money) {
-    return '0.00';
+    return '0';
   }
-  return parseFloat(money).toFixed(2);
+  if (('' + money).indexOf('.') !== -1) {
+    return parseFloat(money).toFixed(2);
+  }
+  return parseInt(money);
 };
 
 var money = {
