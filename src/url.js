@@ -1,7 +1,5 @@
 /**
  * cleanParams
- * @param data
- * @returns {*}
  */
 const cleanParams = (data) => {
   if (!data) {
@@ -10,7 +8,7 @@ const cleanParams = (data) => {
   const newData = {};
   Object.keys(data).forEach((key) => {
     if (newData[key] !== '' && newData[key] !== null && newData[key] !== undefined) {
-      newData[key] = encodeURI(encodeURI(data[key]));
+      newData[key] = encodeURIComponent(encodeURIComponent(data[key]));
     }
   });
   return newData;
@@ -18,7 +16,7 @@ const cleanParams = (data) => {
 
 
 const combineParams = (params) => {
-  if(!params){
+  if (!params) {
     return '';
   }
   const temp = [];
