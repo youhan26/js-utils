@@ -5,10 +5,11 @@ const formatMoney = (money) => {
   if (!money) {
     return '0';
   }
-  if ((`${money}`).indexOf('.') !== -1) {
-    return parseFloat(money).toFixed(2);
+  
+  if (Number.isInteger(parseFloat(money))) {
+    return parseInt(money);
   }
-  return parseInt(money);
+  return parseFloat(money).toFixed(2);
 };
 
 
