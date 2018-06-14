@@ -24,10 +24,15 @@ var _url = require('./url');
 
 var _url2 = _interopRequireDefault(_url);
 
+var _common = require('./common');
+
+var _common2 = _interopRequireDefault(_common);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var UTILS = {
-  str: _str2.default, money: _money2.default, time: _time2.default, phone: _phone2.default, url: _url2.default
+  str: _str2.default, money: _money2.default, time: _time2.default, phone: _phone2.default, url: _url2.default,
+  common: _common2.default
 };
 
 exports.default = UTILS;

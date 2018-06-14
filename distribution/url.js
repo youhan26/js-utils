@@ -12,7 +12,7 @@ var cleanParams = function cleanParams(data) {
   }
   var newData = {};
   Object.keys(data).forEach(function (key) {
-    if (newData[key] !== '' && newData[key] !== null && newData[key] !== undefined) {
+    if (data[key] !== '' && data[key] !== null && data[key] !== undefined) {
       newData[key] = encodeURIComponent(encodeURIComponent(data[key]));
     }
   });
@@ -26,7 +26,7 @@ var combineParams = function combineParams(params) {
   var temp = [];
   Object.keys(params).forEach(function (key) {
     if (params[key] !== '' && params[key] !== null && params[key] !== undefined) {
-      temp.push(key + '=' + encodeURI(encodeURI(params[key])));
+      temp.push(key + '=' + encodeURIComponent(encodeURIComponent(params[key])));
     }
   });
   return temp.join('&');
