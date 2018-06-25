@@ -6,6 +6,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var emptyfunc = function emptyfunc() {};
 
+var noop = function noop() {};
+
 exports.default = {
-  emptyfunc: emptyfunc
+  emptyfunc: emptyfunc,
+  noop: noop
 };
