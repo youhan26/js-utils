@@ -20,4 +20,13 @@ function dataURItoBlob(dataURI) {
   return new Blob([ia], {type: mimeString})
 }
 
+/**
+ * exportImage
+ * @param canvas
+ */
+function exportImage(canvas) {
+  const imgURL = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream')
+  window.open(imgURL)
+}
+
 export default dataURItoBlob
