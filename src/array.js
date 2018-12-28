@@ -23,7 +23,6 @@ function remove(arr, item) {
      * ~true：-2
      * ~false: -1
      */
-
     if (~index) {
       return removeAt(arr, index);
     }
@@ -64,4 +63,14 @@ function pluck(arr, field) {
     })
   }
   return [];
+}
+
+export default {
+  pluck,
+  compact,
+  fatten,
+  remove,
+  isArr,
+  removeAt,
+  contains
 }
