@@ -5,6 +5,7 @@ const setImmediatePloyfill = (function () {
     return setImmediate;
   }
 
+  // use microTask
   if (typeof Promise !== 'undefined') {
     const p = Promise.resolve();
     return function (fn) {
@@ -12,10 +13,9 @@ const setImmediatePloyfill = (function () {
     };
   }
 
-  let queue = [];
-
-  // if support MutationObserver
+  // if support MutationObserver and use microTask
   if (typeof MutationObserver !== 'undefined') {
+    let queue = [];
     const dd = document.createElement("div");
     const mo = new MutationObserver(function () {
       queue.forEach(function (item) {
@@ -31,6 +31,7 @@ const setImmediatePloyfill = (function () {
     };
   }
 
+  // use macroTask
   return function (fn) {
     setTimeout(fn, 0);
   };
