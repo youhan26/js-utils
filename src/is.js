@@ -16,7 +16,6 @@ function isUndefined(obj) {
   return obj === void 0;
 }
 
-
 function isFunction(arg) {
   return typeof arg === 'function';
 }
@@ -44,7 +43,6 @@ function isBoolean(value) {
 function isPromiseLike(obj) {
   return obj && isFunction(obj.then);
 }
-
 
 function isString(value) {
   return typeof value === 'string';
