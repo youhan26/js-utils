@@ -26,8 +26,22 @@ function omit(obj, keys) {
 	}
 }
 
+/**
+ * Similar to Object.keys() but does not fail on empty parameter.
+ */
+function keys(obj) {
+	const s = [];
+	for (const i in obj) {
+		if (obj.hasOwnProperty(i)) {
+			s.push(i);
+		}
+	}
+	return s;
+}
+
 
 export default {
 	pick,
-	omit
+	omit,
+	keys
 };
