@@ -1,3 +1,16 @@
+function isType(type){
+	return function(obj){
+		return obj !== null && Object.prototype.toString.call(obj) === `[object ${type}]`
+	}
+}
+
+// const isPlainObject = isType('Object');
+const isFunction = isType('Function');
+const isArray = Array.isArray || isType('Array');
+const isBlob = isType('Blob');
+const isDate = isType('Date');
+const isRegExp = isType('RegExp')
+
 function isObject(arg) {
 	return arg !== null && typeof arg === 'object';
 }
@@ -7,13 +20,8 @@ function isNaN(obj) {
 	return obj !== obj;
 }
 
-/**
- * null / void 0
- * @param s
- * @returns {boolean}
- */
-function isEmpty(s) {
-	return s == null;
+function isPlainObject(value) {
+	return value !== null && typeof value === 'object' && !Object.getPrototypeOf(value);
 }
 
 function isNull(obj) {
@@ -24,24 +32,12 @@ function isUndefined(obj) {
 	return obj === void 0;
 }
 
-function isFunction(arg) {
-	return typeof arg === 'function';
-}
-
-function isDate(value) {
-	return toString.call(value) === '[object Date]';
-}
-
 function isNumber(value) {
 	return typeof value === 'number';
 }
 
 function isWindow(obj) {
 	return obj && obj.window === obj;
-}
-
-function isBlob(obj) {
-	return toString.call(obj) === '[object Blob]';
 }
 
 function isBoolean(value) {
@@ -56,9 +52,6 @@ function isString(value) {
 	return typeof value === 'string';
 }
 
-function isPlainObject(value) {
-	return value !== null && typeof value === 'object' && !Object.getPrototypeOf(value);
-}
 
 export default {
 	isNaN,
