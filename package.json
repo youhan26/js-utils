@@ -1,6 +1,6 @@
 {
-  "name": "mi-js-utils",
-  "version": "2.1.1",
+  "name": "t-utils",
+  "version": "0.0.1",
   "author": "Han You <youhan26@gmail.com>",
   "license": "MIT",
   "main": "lib/index.umd.js",
