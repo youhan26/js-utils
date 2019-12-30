@@ -9,7 +9,7 @@ const isFunction = isType('Function');
 const isArray = Array.isArray || isType('Array');
 const isBlob = isType('Blob');
 const isDate = isType('Date');
-const isRegExp = isType('RegExp')
+const isRegExp = isType('RegExp');
 
 function isObject(arg) {
 	return arg !== null && typeof arg === 'object';
@@ -51,7 +51,6 @@ function isPromiseLike(obj) {
 function isString(value) {
 	return typeof value === 'string';
 }
-
 
 export default {
 	isNaN,
