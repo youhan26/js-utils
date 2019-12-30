@@ -1,15 +1,3 @@
-.*.swp
-._*
-.DS_Store
-.git
 .idea
-.hg
-.npmrc
-.lock-wscript
-.svn
-.wafpickle-*
-.idea/
-src/
-config.gypi
-CVS
-npm-debug.log
+.babel.config.js
+.rollup.config.js
