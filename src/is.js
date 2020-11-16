@@ -52,8 +52,12 @@ function isString(value) {
 	return typeof value === 'string';
 }
 
+const isArray = (function() {
+	return Array.isArray ? Array.isArray : isType('Array');
+})();
 
 export default {
+	isArray,
 	isNaN,
 	isNull,
 	isUndefined,
